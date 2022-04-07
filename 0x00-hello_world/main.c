@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - Entty point
+ * main - Entry point
+ *
  * Return: Always 0 (Success)
  */
-int main (void)
+int main(void)
 {
-   return (0);
-}
+    return (0);
+i}

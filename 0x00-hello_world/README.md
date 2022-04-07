@@ -1,1 +1,1 @@
-Hello C
+C
