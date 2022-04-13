@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry point
@@ -8,14 +8,13 @@
 
 int main(void)
 {
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
+	char alpa[] = "_putchar\n";
+	int i = 0;
+
+	while (alpa[i])
+	{
+		_putchar(alpa[i]);
+		i++;
+	}
 	return (0);
 }
