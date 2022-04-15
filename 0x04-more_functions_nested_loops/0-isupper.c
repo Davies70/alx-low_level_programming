@@ -14,11 +14,6 @@ int _isupper(int c)
 		c++;
 		return (1);
 	}
-	else if (c <= 'z')
-	{
-		c = 'a';
-		c++;
+	else
 		return (0);
-	}
-	return (0);
 }
