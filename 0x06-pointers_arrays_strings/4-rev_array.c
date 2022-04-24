@@ -1,25 +1,40 @@
 #include "main.h"
 /**
- * reverse_array - Entry point
- *@a: string
- *@n: interger size
- * Return: Always 0 (Success)
+ * reverse_array - reverses the content of an array of integers
+ * @a: an array of integers
+ * @n: number of elements of the array
+ * Return: returns void
  */
 
 void reverse_array(int *a, int n)
+
 {
-	int i = 0, taille, k;
-	int c;
+int *start_c, *end_c, c;
+int i;
 
-	taille = n - 1;
-	k = taille / 2;
 
-	while (i <= k)
-	{
-		c = a[i];
-		a[i] = a[taille];
-		a[taille] = c;
-		i++;
-		taille--;
-	}
+start_c = a;
+end_c = a;
+
+
+for (i = 0; i < n - 1; i++)
+{
+end_c++;
+}
+
+
+
+
+for (i = 0; i < n / 2; i++)
+{
+
+
+c = *end_c;
+*end_c = *start_c;
+*start_c = c;
+
+start_c++;
+end_c--;
+}
+
 }
