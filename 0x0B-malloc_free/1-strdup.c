@@ -1,46 +1,31 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "main.h"
+#include<stdlib.h>
+
 /**
- * _strdup - function to copy string into ram
- *@str: string
- * Return: p
+ * _strdup - a function ...
+ * @str: the chaine
+ *
+ * Return: 1 or 0
  */
 
-char *_strdup(char *str)
+char  *_strdup(char *str)
 {
-	int i;
-	char *p;
-	int n;
+	char *src;
+	int len = 0, i = 0;
 
 	if (str == NULL)
 		return (NULL);
-	n = _len(str);
-	p = malloc(sizeof(char) * (n + 1));
-	if (p != NULL)
+	while (str[len])
+		len++;
+	src = malloc((len + 1) * sizeof(char));
+	if (src != NULL)
 	{
-		for (i = 0; i < n; i++)
-			p[i] = str[i];
+		while (str[i])
+		{
+			src[i] = str[i];
+			i++;
+		}
+		src[i] = '\0';
 	}
-	return (p);
+	return (src);
 }
-
-/**
- * _len - function to return string length
- *@str: string
- * Return: i
- */
-int _len(char *str)
-{
-	int i;
-
-	while (str[i] != '\n')
-	{
-		i++;
-	}
-	return (i);
-}
-
-
-
 
