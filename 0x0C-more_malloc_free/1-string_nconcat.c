@@ -1,58 +1,51 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "main.h"
+
 /**
- *string_nconcat - concatenating function
- *@s1: string 1
- *@s2: string 2
- *@n: integer
- * Return: Always p;
+ * string_nconcat - concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ * @n: index
+ * Return: char pointer
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int a, b, i, j;
 	char *p;
+	unsigned int size1 = 0, size2 = 0, i;
 
-	i = 0;
-	j = 0;
-
-	if (s1 == NULL || s2 == NULL)
-	{
+	if (s1 == NULL)
 		s1 = "";
+
+	if (s2 == NULL)
 		s2 = "";
-	}
-	a = length(s1);
-	b = length(s2);
-	p = malloc(sizeof(char) * (a + n + 1));
-	if (p == NULL)
+
+	while (s1[size1] != '\0')
 	{
-		return (NULL);
+		size1++;
 	}
-	while (s1[i] != '\n')
+
+	while (s2[size2] != '\0')
+	{
+		size2++;
+	}
+
+	if (n > size2)
+	n = size2;
+	p = malloc((size1 + n + 1) * sizeof(char));
+
+	if (p == NULL)
+		return (0);
+
+	for (i = 0; i < size1; i++)
 	{
 		p[i] = s1[i];
 	}
-	while (j < b)
+
+	for (; i < (size1 + n); i++)
 	{
-		p[i] = s2[j];
-		i++;
-		j++;
+		p[i] = s2[i - size1];
 	}
-	return (p);
-}
-/**
- *length - return string length
- *@s: string
- *Return: i
- */
+	p[i] = '\0';
 
-int length(char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i] != '\n')
-		i++;
-	return (i);
+return (p);
 }
