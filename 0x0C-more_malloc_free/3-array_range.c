@@ -23,7 +23,7 @@ if (min > max)
 return (NULL);
 if (!p)
 return (NULL);
-for (i = min; i <= max && i < n; i++)
+for (i = min; i <= max && i < min - max; i++)
 {
 p[j] = i;
 j++;
