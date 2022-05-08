@@ -15,6 +15,8 @@ int n;
 int i;
 int j = 0;
 
+if (min > max)
+return (NULL);
 if (min < 0 && max < 0)
 n = 1 + (-1 * (min - max));
 else
@@ -22,8 +24,6 @@ n = max - min + 1;
 if (n < 0)
 n = n * -1;
 p = malloc(sizeof(int) * n);
-if (min > max)
-return (NULL);
 if (!p)
 return (NULL);
 for (i = min; i <= max; i++)
