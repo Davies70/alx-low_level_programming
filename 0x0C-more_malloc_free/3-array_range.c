@@ -15,6 +15,9 @@ int n;
 int i;
 int j = 0;
 
+if (min < 0 && max < 0)
+n = (-1 * (min - max) + 1);
+else
 n = max - min + 1;
 if (n < 0)
 n = n * -1;
