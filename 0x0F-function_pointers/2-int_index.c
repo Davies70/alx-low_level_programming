@@ -1,5 +1,6 @@
 /**
-*@int_index - func name
+*int_index - func name
+*@array: array type
 *@size: size of array
 *@cmp: pointer to function
 *Return: -1 or 1
