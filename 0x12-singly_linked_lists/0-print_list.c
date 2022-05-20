@@ -20,7 +20,7 @@ while (current != NULL)
 if (current->str != NULL)
 printf("[%d] %s\n", current->len, current->str);
 else
-printf("[0] [nil]\n");
+printf("[%d] %s\n", 0, "(nil)");
 current = current->next;
 count++;
 }
