@@ -31,7 +31,7 @@ list_t *newnode;
 
 length = _strlen(str);
 newnode = malloc(sizeof(list_t));
-if (newmode == NULL)
+if (newnode == NULL)
 return (NULL);
 newnode->len = length;
 newnode->str = strdup(str);
