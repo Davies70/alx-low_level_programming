@@ -31,6 +31,8 @@ list_t *newnode;
 
 length = _strlen(str);
 newnode = malloc(sizeof(list_t));
+if (newmode == NULL)
+return (NULL);
 newnode->len = length;
 newnode->str = strdup(str);
 newnode->next = *head;
@@ -39,7 +41,5 @@ if (*head != NULL)
 return (*head);
 else
 return (NULL);
-free(newnode->str);
-free(newnode);
 }
 
