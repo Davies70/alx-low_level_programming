@@ -39,5 +39,7 @@ if (*head != NULL)
 return (*head);
 else
 return (NULL);
+free(newnode->str);
+free(newnode);
 }
 
