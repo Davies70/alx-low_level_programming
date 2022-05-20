@@ -15,7 +15,7 @@ int count = 0;
 if (h == NULL)
 return (0);
 current = h;
-if (current != NULL)
+while (current != NULL)
 {
 if (current->str != NULL)
 printf("[%d] %s\n", current->len, current->str);
