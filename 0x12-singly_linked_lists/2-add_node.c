@@ -6,7 +6,7 @@
 * Return: i
 */
 
-int _strlen(const char*string)
+int _strlen(const char *string)
 {
 int i = 0;
 
@@ -21,12 +21,13 @@ return (i);
 * add_node - add a new node
 * @head: pointer to pointer
 * @str: string
+* Return: *head or NULL
 */
 
 list_t *add_node(list_t **head, const char *str)
 {
 int length;
-list_t* newnode;
+list_t *newnode;
 
 length = _strlen(str);
 newnode = malloc(sizeof(list_t));
