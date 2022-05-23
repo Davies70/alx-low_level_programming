@@ -4,7 +4,7 @@
 /**
 *print_listint - print elements of list
 *@h: head node
-*
+*Return: count
 */
 size_t print_listint(const listint_t *h)
 {
