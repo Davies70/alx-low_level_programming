@@ -12,7 +12,7 @@ listint_t *current, *node;
 unsigned int count = 0;
 
 current = head;
-if (!head)
+if (!head || !index)
 return (NULL);
 while (count < index)
 {
