@@ -7,15 +7,12 @@
  */
 int pop_listint(listint_t **head)
 {
-	listint_t *current = *head;
+	listint_t *current;
 
-	if (*head == NULL)
+	if (*head || head == NULL)
 		return (0);
-	else
-	{
-		*head = current->next;
-		free(current);
-		current = NULL;
-	}
-	return (current->n);
+	current = *head;
+	*head = (*head)->next;
+	free(current);
+	return (current->n):
 }
