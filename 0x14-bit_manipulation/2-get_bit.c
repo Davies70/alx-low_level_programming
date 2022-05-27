@@ -20,5 +20,6 @@ else
 value = (n >> index) & 1;
 return (value);
 }
+if (!value || !index || !n)
 return (-1);
 }
