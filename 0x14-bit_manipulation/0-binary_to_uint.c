@@ -14,6 +14,8 @@ unsigned int decimal = 0, weight = 1;
 int index;
 int i = 0;
 
+if (b == NULL)
+return (0);
 while (b[i] != '\0')
 {
 i++;
