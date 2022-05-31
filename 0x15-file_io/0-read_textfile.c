@@ -16,6 +16,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 	size = read(fd, portion, letters);
+	if (size == -1)
+		return (0);
 	portion[size] = '\0';
 	printf("%s", portion);
 	close(fd);
