@@ -1,26 +1,32 @@
-#include "main.h"
+#include "holberton.h"
 /**
- * read_textfile - function to read file
- * @filename: name of file to be read
- * @letters: size of characters to be read
- * Return: size of letters it could read
- */
+  * read_textfile - reads a text file and prints it to the POSIX standard out
+  * @filename: name of the file to read
+  * @letters: number of characters to print
+  * Return: 0 on success
+  **/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, size;
-	char portion[BUFFER + 1];
+	int txt_file, total, read_status;
+	char buffer[BUFSIZE];
 
 	if (filename == NULL)
 		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	txt_file = open(filename, O_RDONLY);
+	if (txt_file == -1)
 		return (0);
-	size = read(fd, portion, letters);
-	if (size == -1)
-		return (0);
-	portion[size] = '\0';
-	printf("%s", portion);
-	close(fd);
-	return (size);
+	total = 0;
+	read_status = 1;
+	while (letters > BUFSIZE && read_status != 0)
+	{
+		read_status = read(txt_file, buffer, BUFSIZE);
+		write(STDOUT_FILENO, buffer, read_status);
+		total += read_status;
+		letters -= BUFSIZE;
+	}
+	read_status = read(txt_file, buffer, letters);
+	write(STDOUT_FILENO, buffer, read_status);
+	total += read_status;
+	close(txt_file);
+	return (total);
 }
-
