@@ -1,0 +1,20 @@
+#comping obect files
+
+CC = gcc
+SRC = main.c school.c
+OBJ = main.o school.o
+NAME = school 
+
+main.o: main.c
+	$(CC) -c -o main.o main.c
+
+school.o: school.c
+	$(CC) -c -o school.o school.c
+
+$(NAME): main.o school.o
+	$(CC) $(SRC) -o $(NAME)
+
+all: $(NAME)
+
+
+
