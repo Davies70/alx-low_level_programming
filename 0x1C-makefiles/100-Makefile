@@ -10,7 +10,10 @@ FLAGS = $(CFLAG)
 all: $(OBJ) m.h
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-.PHONY: clean oclean fclean re
+.PHONY: fclean clean oclean
+.PHONY: re oclean
+.PHONY: clean
+.PHONY: oclean
 
 clean:
 	$(RM) *~ $(NAME)
