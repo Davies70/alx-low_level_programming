@@ -9,11 +9,10 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-oclean:
-	$(RM) $(NAME)
+clean: $(RM) *~ $(NAME)
 
-clean:
-	$(RM) *~ $(OBJ)
+oclean:
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
