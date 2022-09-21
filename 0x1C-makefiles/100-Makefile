@@ -16,11 +16,11 @@ all: $(OBJ) m.h
 .PHONY: oclean
 
 clean:
-	$(RM) *~ $(NAME)
+	$(DEL) *~ $(NAME)
 
 
 oclean:
-	$(RM) $(OBJ)
+	$(DEL) $(OBJ)
 
 fclean: clean oclean
 
