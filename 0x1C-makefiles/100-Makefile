@@ -16,7 +16,7 @@ all: $(OBJ) m.h
 .PHONY: oclean
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) $(NAME)
 
 
 oclean:
